@@ -1,0 +1,92 @@
+$date
+	Sat Oct 24 05:19:27 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module full_subtractor_tb $end
+$var wire 1 ! diff $end
+$var wire 1 " borrow $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % bin $end
+$scope module dut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % bin $end
+$var wire 1 " borrow $end
+$var wire 1 ! diff $end
+$var wire 1 & x $end
+$var wire 1 ' y $end
+$var wire 1 ( y1 $end
+$var wire 1 ) z $end
+$var wire 1 * z1 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0*
+1)
+0(
+1'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#10
+1!
+0)
+1"
+1&
+1(
+1%
+#20
+0"
+0(
+0'
+0%
+1$
+#30
+0!
+1)
+0&
+1%
+#40
+1"
+1'
+1!
+1*
+0%
+0$
+1#
+#50
+0*
+0!
+0)
+1&
+1(
+1%
+#60
+0"
+0(
+0'
+0%
+1$
+#70
+1"
+1*
+1!
+1)
+0&
+1%
+#80
