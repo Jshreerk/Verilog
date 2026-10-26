@@ -1,0 +1,73 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x60f8e87c2dc0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x60f8e87c2f50 .scope module, "binary_adder_2bit_tb" "binary_adder_2bit_tb" 3 1;
+ .timescale 0 0;
+v0x60f8e87d70b0_0 .var "a", 1 0;
+v0x60f8e87d7170_0 .var "b", 1 0;
+v0x60f8e87d7240_0 .net "y", 2 0, L_0x60f8e87d75f0;  1 drivers
+S_0x60f8e8789500 .scope module, "dut" "binary_adder_2bit" 3 5, 4 1 0, S_0x60f8e87c2f50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 3 "y";
+v0x60f8e8789730_0 .net *"_ivl_0", 2 0, L_0x60f8e87d7340;  1 drivers
+L_0x73c8b1fb7018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x60f8e87d6ac0_0 .net *"_ivl_3", 0 0, L_0x73c8b1fb7018;  1 drivers
+v0x60f8e87d6ba0_0 .net *"_ivl_4", 2 0, L_0x60f8e87d74b0;  1 drivers
+L_0x73c8b1fb7060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x60f8e87d6c60_0 .net *"_ivl_7", 0 0, L_0x73c8b1fb7060;  1 drivers
+v0x60f8e87d6d40_0 .net "a", 1 0, v0x60f8e87d70b0_0;  1 drivers
+v0x60f8e87d6e70_0 .net "b", 1 0, v0x60f8e87d7170_0;  1 drivers
+v0x60f8e87d6f50_0 .net "y", 2 0, L_0x60f8e87d75f0;  alias, 1 drivers
+L_0x60f8e87d7340 .concat [ 2 1 0 0], v0x60f8e87d70b0_0, L_0x73c8b1fb7018;
+L_0x60f8e87d74b0 .concat [ 2 1 0 0], v0x60f8e87d7170_0, L_0x73c8b1fb7060;
+L_0x60f8e87d75f0 .arith/sum 3, L_0x60f8e87d7340, L_0x60f8e87d74b0;
+    .scope S_0x60f8e87c2f50;
+T_0 ;
+    %vpi_call/w 3 12 "$dumpfile", "binary_adder_2bit.vcd" {0 0 0};
+    %vpi_call/w 3 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x60f8e87c2f50 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x60f8e87c2f50;
+T_1 ;
+    %vpi_call/w 3 16 "$monitor", "a=%b, b=%b | y=%b", v0x60f8e87d70b0_0, v0x60f8e87d7170_0, v0x60f8e87d7240_0 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x60f8e87d70b0_0, 0, 2;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x60f8e87d7170_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x60f8e87d70b0_0, 0, 2;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x60f8e87d7170_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x60f8e87d70b0_0, 0, 2;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x60f8e87d7170_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x60f8e87d70b0_0, 0, 2;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x60f8e87d7170_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call/w 3 21 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "binary_adder_2bit_tb.v";
+    "binary_adder_2bit.v";

@@ -1,0 +1,50 @@
+$date
+	Mon Oct 26 17:09:35 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module binary_adder_2bit_tb $end
+$var wire 3 ! y [2:0] $end
+$var reg 2 " a [1:0] $end
+$var reg 2 # b [1:0] $end
+$scope module dut $end
+$var wire 2 $ a [1:0] $end
+$var wire 2 % b [1:0] $end
+$var wire 3 & y [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1 !
+b1 &
+b1 #
+b1 %
+#20
+b0 #
+b0 %
+b1 !
+b1 &
+b1 "
+b1 $
+#30
+b10 !
+b10 &
+b1 #
+b1 %
+#40
