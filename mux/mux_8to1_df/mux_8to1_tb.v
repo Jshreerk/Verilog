@@ -1,0 +1,30 @@
+module mux_8to1_tb;
+    reg [7:0]d;
+    reg s2, s1, s0;
+    wire y;
+
+    mux_8to1 dut(
+        .d(d),
+        .s2(s2), 
+        .s1(s1), 
+        .s0(s0),
+        .y(y)
+    );
+
+    initial begin 
+        $dumpfile("mux_8to1.vcd");
+        $dumpvars(0, mux_8to1_tb);
+    end
+    initial begin
+        $monitor("s2=%b, s1=%b, s0=%b, d=%b | y=%b", s2, s1, s0, d, y);
+        s2=0;s1=0;s2=0;#10;
+        s2=0;s1=0;s2=1;#10;
+        s2=0;s1=1;s2=0;#10;
+        s2=0;s1=1;s2=1;#10;
+        s2=1;s1=0;s2=0;#10;
+        s2=1;s1=0;s2=1;#10;
+        s2=1;s1=1;s2=0;#10;
+        s2=1;s1=1;s2=1;#10;
+        $finish;
+    end
+endmodule
