@@ -17,6 +17,7 @@ module mux_8to1_tb;
     end
     initial begin
         $monitor("s2=%b, s1=%b, s0=%b, d=%b | y=%b", s2, s1, s0, d, y);
+        d=8'b00001110;
         s2=0;s1=0;s2=0;#10;
         s2=0;s1=0;s2=1;#10;
         s2=0;s1=1;s2=0;#10;
