@@ -1,12 +1,15 @@
-module tb_parity_generator;
+module even_parity_tb;
     reg  [3:0] data;
     wire parity;
 
-    parity_generator dut (
+    even_parity dut (
         .data(data),
         .parity(parity)
     );
-
+    initial begin 
+        $dumpfile("even_parity.vcd");
+        $dumpvars(0, even_parity_tb);
+    end
     initial begin
         $monitor("time=%0t data=%b parity=%b", $time, data, parity);
 

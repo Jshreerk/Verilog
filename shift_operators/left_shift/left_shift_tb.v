@@ -1,4 +1,4 @@
-module tb_left_shift;
+module left_shift_tb;
     reg  [3:0] in;
     wire [3:0] out;
 
@@ -6,6 +6,10 @@ module tb_left_shift;
         .in(in),
         .out(out)
     );
+    initial begin 
+        $dumpfile("left_shift.vcd");
+        $dumpvars(0, left_shift_tb);
+    end 
 
     initial begin
         $monitor("in=%b out=%b", in, out);

@@ -1,0 +1,7 @@
+VCD info: dumpfile waves/dump.vcd opened for output.
+time=0 data=0000 parity=0
+time=10 data=0001 parity=1
+time=20 data=0011 parity=0
+time=30 data=0111 parity=1
+time=40 data=1111 parity=0
+tb/tb_parity_generator.v:24: $finish called at 50 (1s)

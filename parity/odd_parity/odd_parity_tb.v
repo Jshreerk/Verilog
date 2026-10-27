@@ -1,12 +1,15 @@
-module tb_parity_generator;
+module odd_parity_tb;
     reg  [3:0] data;
-    wire       parity;
+    wire parity;
 
-    parity_generator dut (
+    odd_parity dut (
         .data(data),
         .parity(parity)
     );
-
+    initial begin 
+        $dumpfile("odd_parity.vcd");
+        $dumpvars(0, odd_parity_tb);
+    end
     initial begin
         $monitor("time=%0t data=%b odd_parity=%b", $time, data, parity);
 

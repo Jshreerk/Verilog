@@ -1,4 +1,4 @@
-module tb_right_shift;
+module right_shift_tb;
     reg  [3:0] a;
     wire [3:0] y;
 
@@ -6,7 +6,10 @@ module tb_right_shift;
         .a(a),
         .y(y)
     );
-
+     initial begin 
+        $dumpfile("right_shift.vcd");
+        $dumpvars(0, right_shift_tb);
+    end 
     initial begin
         $monitor("a=%b y=%b", $time, a, y);
 
