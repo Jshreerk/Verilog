@@ -1,0 +1,76 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x5af3facb4fc0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x5af3facb5150 .scope module, "binary_to_bcd_tb" "binary_to_bcd_tb" 3 1;
+ .timescale 0 0;
+v0x5af3facc9d80_0 .net "BCD", 7 0, L_0x5af3facda600;  1 drivers
+v0x5af3facc9e40_0 .var "binary", 3 0;
+S_0x5af3fac7b500 .scope module, "dut" "binary_to_bcd" 3 4, 4 1 0, S_0x5af3facb5150;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "binary";
+    .port_info 1 /OUTPUT 8 "BCD";
+v0x5af3fac7b6e0_0 .net "BCD", 7 0, L_0x5af3facda600;  alias, 1 drivers
+v0x5af3facc9370_0 .net *"_ivl_0", 31 0, L_0x5af3facc9f10;  1 drivers
+v0x5af3facc9450_0 .net *"_ivl_10", 7 0, L_0x5af3facda1e0;  1 drivers
+L_0x74a372eaa0f0 .functor BUFT 1, C4<0001>, C4<0>, C4<0>, C4<0>;
+v0x5af3facc9510_0 .net/2u *"_ivl_12", 3 0, L_0x74a372eaa0f0;  1 drivers
+L_0x74a372eaa138 .functor BUFT 1, C4<1010>, C4<0>, C4<0>, C4<0>;
+v0x5af3facc95f0_0 .net/2u *"_ivl_14", 3 0, L_0x74a372eaa138;  1 drivers
+v0x5af3facc9720_0 .net *"_ivl_16", 3 0, L_0x5af3facda380;  1 drivers
+v0x5af3facc9800_0 .net *"_ivl_18", 7 0, L_0x5af3facda4c0;  1 drivers
+L_0x74a372eaa018 .functor BUFT 1, C4<0000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x5af3facc98e0_0 .net *"_ivl_3", 27 0, L_0x74a372eaa018;  1 drivers
+L_0x74a372eaa060 .functor BUFT 1, C4<00000000000000000000000000001010>, C4<0>, C4<0>, C4<0>;
+v0x5af3facc99c0_0 .net/2u *"_ivl_4", 31 0, L_0x74a372eaa060;  1 drivers
+v0x5af3facc9aa0_0 .net *"_ivl_6", 0 0, L_0x5af3facda070;  1 drivers
+L_0x74a372eaa0a8 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0x5af3facc9b60_0 .net/2u *"_ivl_8", 3 0, L_0x74a372eaa0a8;  1 drivers
+v0x5af3facc9c40_0 .net "binary", 3 0, v0x5af3facc9e40_0;  1 drivers
+L_0x5af3facc9f10 .concat [ 4 28 0 0], v0x5af3facc9e40_0, L_0x74a372eaa018;
+L_0x5af3facda070 .cmp/gt 32, L_0x74a372eaa060, L_0x5af3facc9f10;
+L_0x5af3facda1e0 .concat [ 4 4 0 0], v0x5af3facc9e40_0, L_0x74a372eaa0a8;
+L_0x5af3facda380 .arith/sub 4, v0x5af3facc9e40_0, L_0x74a372eaa138;
+L_0x5af3facda4c0 .concat [ 4 4 0 0], L_0x5af3facda380, L_0x74a372eaa0f0;
+L_0x5af3facda600 .functor MUXZ 8, L_0x5af3facda4c0, L_0x5af3facda1e0, L_0x5af3facda070, C4<>;
+    .scope S_0x5af3facb5150;
+T_0 ;
+    %vpi_call/w 3 8 "$dumpfile", "binary_to_bcd.vcd" {0 0 0};
+    %vpi_call/w 3 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5af3facb5150 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5af3facb5150;
+T_1 ;
+    %vpi_call/w 3 12 "$monitor", "binary=%b|BCD=%b", v0x5af3facc9e40_0, v0x5af3facc9d80_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x5af3facc9e40_0, 0, 4;
+    %delay 3, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x5af3facc9e40_0, 0, 4;
+    %delay 3, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x5af3facc9e40_0, 0, 4;
+    %delay 3, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0x5af3facc9e40_0, 0, 4;
+    %delay 3, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x5af3facc9e40_0, 0, 4;
+    %delay 3, 0;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "binary_to_bcd_tb.v";
+    "binary_to_bcd.v";

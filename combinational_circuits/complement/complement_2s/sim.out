@@ -1,0 +1,55 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x634b99baab10 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x634b99baaca0 .scope module, "complement_2s_tb" "complement_2s_tb" 3 1;
+ .timescale 0 0;
+v0x634b99bbcae0_0 .var "a", 3 0;
+v0x634b99bbcbd0_0 .net "y", 3 0, L_0x634b99bbcd20;  1 drivers
+S_0x634b99b71500 .scope module, "dut" "complement_2s" 3 5, 4 1 0, S_0x634b99baaca0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /OUTPUT 4 "y";
+L_0x634b99b976e0 .functor NOT 4, v0x634b99bbcae0_0, C4<0000>, C4<0000>, C4<0000>;
+v0x634b99b716e0_0 .net *"_ivl_0", 3 0, L_0x634b99b976e0;  1 drivers
+L_0x7ba4a4db7018 .functor BUFT 1, C4<0001>, C4<0>, C4<0>, C4<0>;
+v0x634b99bbc800_0 .net/2u *"_ivl_2", 3 0, L_0x7ba4a4db7018;  1 drivers
+v0x634b99bbc8e0_0 .net "a", 3 0, v0x634b99bbcae0_0;  1 drivers
+v0x634b99bbc9a0_0 .net "y", 3 0, L_0x634b99bbcd20;  alias, 1 drivers
+L_0x634b99bbcd20 .arith/sum 4, L_0x634b99b976e0, L_0x7ba4a4db7018;
+    .scope S_0x634b99baaca0;
+T_0 ;
+    %vpi_call/w 3 11 "$dumpfile", "complement_2s.vcd" {0 0 0};
+    %vpi_call/w 3 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x634b99baaca0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x634b99baaca0;
+T_1 ;
+    %vpi_call/w 3 15 "$monitor", "a=%b | y=%b", v0x634b99bbcae0_0, v0x634b99bbcbd0_0 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x634b99bbcae0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0x634b99bbcae0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x634b99bbcae0_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call/w 3 19 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "complement_2s_tb.v";
+    "complement_2s.v";

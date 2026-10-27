@@ -1,0 +1,52 @@
+$date
+	Tue Oct 27 10:47:27 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bcd_to_segment7_tb $end
+$var wire 1 ! g $end
+$var wire 1 " f $end
+$var wire 1 # e $end
+$var wire 1 $ d $end
+$var wire 1 % c $end
+$var wire 1 & b $end
+$var wire 1 ' a $end
+$var reg 4 ( bcd [3:0] $end
+$scope module dut $end
+$var wire 1 ' a $end
+$var wire 1 & b $end
+$var wire 4 ) bcd [3:0] $end
+$var wire 1 % c $end
+$var wire 1 $ d $end
+$var wire 1 # e $end
+$var wire 1 " f $end
+$var wire 1 ! g $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 )
+b0 (
+1'
+1&
+1%
+1$
+1#
+1"
+0!
+$end
+#10
+0&
+1!
+0#
+b101 (
+b101 )
+#20

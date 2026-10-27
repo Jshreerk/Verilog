@@ -1,0 +1,34 @@
+$date
+	Tue Oct 27 10:39:37 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module segment7_to_bcd_tb $end
+$var wire 4 ! bcd [3:0] $end
+$var reg 7 " seg [6:0] $end
+$scope module dut $end
+$var wire 7 # seg [6:0] $end
+$var wire 4 $ bcd [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b101 $
+b1011011 #
+b1011011 "
+b101 !
+$end
+#10
+b1001 !
+b1001 $
+b1111011 "
+b1111011 #
+#20
