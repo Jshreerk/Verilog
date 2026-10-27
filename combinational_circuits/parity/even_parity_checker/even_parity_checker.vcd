@@ -1,5 +1,5 @@
 $date
-	Tue Oct 27 04:15:52 2026
+	Tue Oct 27 11:24:29 2026
 $end
 $version
 	Icarus Verilog
@@ -7,7 +7,7 @@ $end
 $timescale
 	1s
 $end
-$scope module even_parity_tb $end
+$scope module even_parity_checker_tb $end
 $var wire 1 ! parity $end
 $var reg 4 " data [3:0] $end
 $scope module dut $end
@@ -21,24 +21,18 @@ $dumpall
 $end
 #0
 $dumpvars
-b0 #
-b0 "
+b1010 #
+b1010 "
 0!
 $end
 #10
+b1100 "
+b1100 #
+#20
 1!
+b1110 "
+b1110 #
+#30
 b1 "
 b1 #
-#20
-0!
-b11 "
-b11 #
-#30
-1!
-b111 "
-b111 #
 #40
-0!
-b1111 "
-b1111 #
-#50
